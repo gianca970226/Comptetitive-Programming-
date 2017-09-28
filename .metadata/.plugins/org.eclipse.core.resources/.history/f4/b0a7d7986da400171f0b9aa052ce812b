@@ -1,0 +1,13 @@
+import sys
+def main():
+    
+    for line in sys.stdin:
+        if line=="0":
+            break;
+        else:
+                print(x)
+    
+    
+
+if __name__ == '__main__':
+    main()

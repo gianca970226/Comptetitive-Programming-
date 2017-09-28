@@ -1,0 +1,31 @@
+def main():
+    while(True):
+        n=int(input())
+        if n==0:
+            break;
+        else:
+            grid = [0]*n
+            ban=False
+            
+            for j in range(0,n):
+                x,y=input().split()
+                numCar=int(x)
+                gan=int(y)
+                value=j+gan
+                if grid[value]!=0:
+                    ban=True
+                    #break
+                else:
+                    grid[value]=numCar
+            
+                     
+            if ban==True:
+                print("-1")   
+            else:
+                grid_Initial=""
+                for j in range(0,n):
+                    grid_Initial=grid_Initial+" "+str(grid[1][j])
+                    
+                print(grid_Initial.strip())       
+if __name__ == '__main__':
+    main()

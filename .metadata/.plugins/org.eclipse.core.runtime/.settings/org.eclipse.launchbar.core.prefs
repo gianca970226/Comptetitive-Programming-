@@ -1,8 +1,10 @@
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
 LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:100 - The 3n + 1 problem main.py,org.eclipse.launchbar.core.descriptorType.default\:Hola main.py,org.eclipse.launchbar.core.descriptorType.default\:Holab,org.eclipse.launchbar.core.descriptorType.default\:Main
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:Hola main.py,org.eclipse.launchbar.core.descriptorType.default\:Holab,org.eclipse.launchbar.core.descriptorType.default\:Main (1),org.eclipse.launchbar.core.descriptorType.default\:12150-PolePosition 12150-PolePosition,org.eclipse.launchbar.core.descriptorType.default\:100-3n+1 100-3n+1,org.eclipse.launchbar.core.descriptorType.default\:100-3n+1 main.py,org.eclipse.launchbar.core.descriptorType.default\:Main,org.eclipse.launchbar.core.descriptorType.default\:100 - The 3n + 1 problem main.py,org.eclipse.launchbar.core.descriptorType.default\:12150-PolePosition main.py
 eclipse.preferences.version=1
 org.eclipse.launchbar.core.descriptorType.default\:100\ -\ The\ 3n\ +\ 1\ problem\ main.py/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:100\ -\ The\ 3n\ +\ 1\ problem\ main.py/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:12150-PolePosition\ main.py/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:12150-PolePosition\ main.py/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
 org.eclipse.launchbar.core.descriptorType.default\:Main/activeLaunchMode=run
 org.eclipse.launchbar.core.descriptorType.default\:Main/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

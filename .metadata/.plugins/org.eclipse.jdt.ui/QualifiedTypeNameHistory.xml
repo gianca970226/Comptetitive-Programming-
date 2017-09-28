@@ -2,9 +2,9 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="Main.book"/>
-<fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="java.nio.channels.ShutdownChannelGroupException"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="java.util.Queue"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
 </qualifiedTypeNameHistroy>

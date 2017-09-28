@@ -1,0 +1,20 @@
+def main():
+    while(True):
+        n=int(input())
+        if n==0:
+            break;
+        else:
+            grid =[[0]*(n)]*3
+            for j in range(0,n-1):
+                print(j)
+                x,y=input().split()
+                numCar=int(x)
+                gan=int(y)
+                grid[j][0]=numCar
+                grid[j][1]=gan
+                
+                print(grid)
+    
+
+if __name__ == '__main__':
+    main()

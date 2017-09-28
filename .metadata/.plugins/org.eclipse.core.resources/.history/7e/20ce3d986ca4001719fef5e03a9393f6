@@ -1,0 +1,9 @@
+import sys
+def main():
+    table = [0] * 1000001
+    for line in sys.stdin:
+        
+    
+
+if __name__ == '__main__':
+    main()

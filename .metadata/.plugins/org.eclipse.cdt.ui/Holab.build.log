@@ -1,20 +1,11 @@
-02:01:31 **** Build of configuration Debug for project Holab ****
+13:24:07 **** Build of configuration Debug for project Holab ****
 make all 
-Building file: ../ho.cpp
+Building file: ../main.cpp
 Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"ho.d" -MT"ho.o" -o "ho.o" "../ho.cpp"
-Finished building: ../ho.cpp
- 
-Building file: ../hol.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"hol.d" -MT"hol.o" -o "hol.o" "../hol.cpp"
-Finished building: ../hol.cpp
- 
-Building target: Holab
-Invoking: GCC C++ Linker
-g++  -o "Holab"  ./ho.o ./hol.o   
-Finished building target: Holab
- 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+subdir.mk:18: fallo en las instrucciones para el objetivo 'main.o'
+make: *** [main.o] Terminado
+Command canceled
 
-02:01:34 Build Finished (took 2s.325ms)
+13:24:09 Build Cancelled (took 2s.479ms)
 

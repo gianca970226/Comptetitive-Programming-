@@ -1,0 +1,15 @@
+import sys
+def main():
+    
+    while(True):
+        n=int(input())
+        if n==0:
+            break;
+        else:
+            for j in range(0,n):
+                x,y=input().split()
+                
+    
+
+if __name__ == '__main__':
+    main()

@@ -15,3 +15,20 @@ Invoking: GCC C++ Linker
 g++  -o "Holab"  ./ho.o ./hol.o   
 Finished building target: Holab
  
+12:12:03 **** Incremental Build of configuration Debug for project Holab ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+make: *** wait: No hay ningún proceso hijo.  Alto.
+make: *** Se espera a que terminen otras tareas....
+make: *** wait: No hay ningún proceso hijo.  Alto.
+Command canceled
+13:24:07 **** Build of configuration Debug for project Holab ****
+make all 
+Building file: ../main.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
+subdir.mk:18: fallo en las instrucciones para el objetivo 'main.o'
+make: *** [main.o] Terminado
+Command canceled

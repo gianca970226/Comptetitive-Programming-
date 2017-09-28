@@ -1,0 +1,14 @@
+import sys
+def main():
+    
+    for line in sys.stdin:
+        if int(line)==0:
+            break;
+        else:
+            x,y=line.split()
+            print(line)
+    
+    
+
+if __name__ == '__main__':
+    main()
