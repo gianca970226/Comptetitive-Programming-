@@ -1,0 +1,105 @@
+import java.awt.print.Book;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
+public class Main {
+	static BufferedReader br;
+	static LinkedList<book> shelving;
+	static LinkedList<book> mesa;
+	static int index;
+	// static Link<String, String> auxSheving1;
+
+	static class book implements Comparable<book> {
+		String nameBook;
+		String autors;
+
+		public book(String nameBook, String autors) {
+
+			this.nameBook = nameBook;
+			this.autors = autors;
+		}
+
+		@Override
+		public int compareTo(book o) {
+			int res = this.autors.compareTo(o.autors);
+			if (res == 0) {
+				return this.nameBook.compareTo(o.nameBook);
+			} else {
+				return res;
+			}
+		}
+
+	}
+
+	public static book findBook(String libro) {
+		for (int i = 0; i < shelving.size(); i++) {
+			if (shelving.get(i).nameBook.equals(libro)) {
+				return shelving.get(i);
+			}
+		}
+		return null;
+	}
+
+	public static Boolean contiansBook(String libro, LinkedList<book> she) {
+		for (int i = 0; i < she.size(); i++) {
+			if (she.get(i).nameBook.equals(libro)) {
+				index = i;
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public static void main(String argslength[]) throws Exception {
+		br = new BufferedReader(new InputStreamReader(System.in));
+		String line = "";
+		shelving = new LinkedList<>();
+		mesa= new LinkedList<>();
+		// auxSheving1 = new HashMap<>();
+		while (!(line = br.readLine()).equals("END")) {
+			String[] date = line.split("by");
+			String nameBook = date[0];
+			String autor = date[1].replace(".", "").replace(",", "").trim().replace(" ", "");
+			shelving.add(new book(nameBook.trim(), autor.trim()));
+			// auxSheving1.put(nameBook.trim(), autor.trim());
+
+		}
+		Collections.sort(shelving);
+		/*for (int i = 0; i <shelving.size(); i++) {
+			System.out.println(shelving.get(i).nameBook);
+		}*/
+		LinkedList<book> auxSheving = new LinkedList<>()
+		while (!(line = br.readLine()).equals("END")) {
+
+			if (line.equals("SHELVE")) {
+
+				System.out.println("END");
+				auxSheving = (LinkedList<book>) shelving.clone();
+				
+			} else {
+				String action = line.substring(0, line.indexOf('"')).trim();
+				String auxNameBook = line.substring(line.indexOf("\""), line.length()).trim();
+				if (action.equals("BORROW")) {
+					for (int i = 0; i < auxSheving.size(); i++) {
+						if (auxSheving.get(i).nameBook.equals(auxNameBook)) {
+
+							auxSheving.remove(auxSheving.get(i));
+							break;
+						}
+					}
+				} else {
+						
+
+				}
+
+			}
+
+		}
+
+	}
+}

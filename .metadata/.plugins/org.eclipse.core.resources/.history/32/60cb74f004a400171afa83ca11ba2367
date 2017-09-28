@@ -1,0 +1,26 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
+public class Main {
+	static BufferedReader br;
+	static TreeMap<String,String>shelving;
+	public static void main(String  args[]) throws Exception
+	{
+		br= new BufferedReader(new  InputStreamReader(System.in));
+		String line="";
+		shelving= new TreeMap<>();
+		while(!(line=br.readLine()).equals("END"))
+		{
+			String [] date=line.split("by");
+			String nameBook=date[0];
+			String autor=date[1].replace(".", "").replace(",", "").trim().replace(" ", "");
+			shelving.put(autor,nameBook);	
+		}
+		for(String key:shelving.keySet())
+		{
+			System.out.println(key+"-->"+shelving.get(key));
+		}
+	}
+}

@@ -1,0 +1,20 @@
+02:01:31 **** Build of configuration Debug for project Holab ****
+make all 
+Building file: ../ho.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"ho.d" -MT"ho.o" -o "ho.o" "../ho.cpp"
+Finished building: ../ho.cpp
+ 
+Building file: ../hol.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"hol.d" -MT"hol.o" -o "hol.o" "../hol.cpp"
+Finished building: ../hol.cpp
+ 
+Building target: Holab
+Invoking: GCC C++ Linker
+g++  -o "Holab"  ./ho.o ./hol.o   
+Finished building target: Holab
+ 
+
+02:01:34 Build Finished (took 2s.325ms)
+

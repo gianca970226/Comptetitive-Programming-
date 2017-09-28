@@ -1,0 +1,78 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
+public class Main {
+	static BufferedReader br;
+	static TreeMap<String, String> shelving;
+	static HashMap<String, String> auxSheving1;
+
+	static class operation {
+		String action;
+		String nameBook;
+		String autors;
+
+		public operation(String action, String nameBook, String autors) {
+			this.action = action;
+			this.nameBook = nameBook;
+			this.autors = autors;
+		}
+
+	}
+
+	public static void main(String args[]) throws Exception {
+		br = new BufferedReader(new InputStreamReader(System.in));
+		String line = "";
+		shelving = new TreeMap<>();
+		auxSheving1 = new HashMap<>();
+		while (!(line = br.readLine()).equals("END")) {
+			String[] date = line.split("by");
+			String nameBook = date[0];
+			String autor = date[1].replace(".", "").replace(",", "").trim().replace(" ", "");
+			shelving.put(autor, nameBook);
+			auxSheving1.put(nameBook, autor);
+
+		}
+		TreeMap<String, String> auxSheving = (TreeMap<String, String>) shelving.clone();
+
+		LinkedList<operation> operations = new LinkedList<>();
+		while (!(line = br.readLine()).equals("END")) {
+
+			if (line.equals("SHELVE")) {
+				for (int i = 0; i < operations.size(); i++) {
+					if (operations.get(i).action.equals("BORROW")) {
+						auxSheving.remove(operations.get(i).nameBook);
+					} else {
+						auxSheving.put(auxSheving1.get(operations.get(i).nameBook), operations.get(i).nameBook);
+						String auxNameAnterior = "";
+						for (String key : shelving.keySet()) {
+							if (auxNameAnterior.equals("") && shelving.get(key).equals(operations.get(i).nameBook)) {
+								System.out.println("First");
+								break;
+							}else if(shelving.get(key).equals(operations.get(i).nameBook))
+							{
+								System.out.println(auxNameAnterior);
+								break;
+							}
+							auxNameAnterior=shelving.get(key);
+						}
+					}
+				}
+				auxSheving = (TreeMap<String, String>) shelving.clone();
+				operations.clear();
+			} else {
+				String action = line.substring(0, line.indexOf('"')).trim();
+				String auxNameBook = line.substring(line.indexOf("\""), line.length()).trim();
+				operations.addLast(new operation(action, auxNameBook, auxSheving1.get(auxNameBook)));
+			}
+
+		}
+		for (String key : shelving.keySet()) {
+			System.out.println(key + "-->" + shelving.get(key));
+		}
+
+	}
+}
