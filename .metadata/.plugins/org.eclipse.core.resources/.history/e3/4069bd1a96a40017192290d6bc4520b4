@@ -1,0 +1,39 @@
+from operator import itemgetter, attrgetter
+class date:
+    def __init__(self,numTeam,solved,time):
+        self.numTeam=numTeam
+        self.solved=solved
+        self.time=time
+  
+def findDuration(time):
+    x,y=time.split(":")
+    return (int(x)*60)+int(y)
+def main():
+    n= int(input())
+    input()
+    for i in range(0,n):
+        results={}
+        line=input()
+        while line: 
+            datos=line.split(" ")
+            status=datos[3]
+            if status=="Y":
+                time=findDuration(datos[2])
+                if time<=20:
+                    time=time+20
+                if(not results.__contains__(datos[0])):
+                    results[datos[0]]=date(datos[0],1, time)
+                else:
+                    results[datos[0]].solved=results[datos[0]].solved+1
+                    results[datos[0]].time=results[datos[0]].time+time     
+            line=input()
+        resultusFinally=results.values()
+        sorted(resultusFinally, key=attrgetter('solved', 'time')) 
+        sorted(resultusFinally, key=attrgetter('solved', 'time'),reverse=True) 
+        for dato in resultusFinally:
+            print(dato.numTeam,dato.solved,dato.time)   
+            
+                
+    
+if __name__ == '__main__':
+    main()

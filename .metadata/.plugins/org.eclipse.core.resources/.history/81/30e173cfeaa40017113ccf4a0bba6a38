@@ -1,0 +1,13 @@
+def main():
+    while(True):
+        n=int(input())
+        if not n:
+            break;
+        else:
+            for j in range(0,n):
+                res=0;
+               
+              
+                    
+if __name__ == '__main__':
+    main()

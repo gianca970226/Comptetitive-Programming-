@@ -1,0 +1,21 @@
+def main():
+    while(True):
+        n=int(input())
+        if not n:
+            break;
+        else:
+            for j in range(0,n):
+                res=0;
+                x,y=input().split()
+                a=input().split(" ")
+                aux=[0]*int(x)
+                for i in range(0,int(y)):
+                    aux[int(a[int(i))]]=1
+                for i in range(0,int(x)):
+                    if aux[i]==1 or aux[i+1]==1:
+                        res=res+1
+                    i=i+1 
+                print (res)
+                    
+if __name__ == '__main__':
+    main()

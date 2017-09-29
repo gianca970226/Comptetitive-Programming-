@@ -1,0 +1,15 @@
+def main():
+    while(True):
+        n=int(input())
+        if not n:
+            break;
+        else:
+            for j in range(0,n):
+                x,y=input().split()
+                numCar=int(x)
+                gan=int(y)
+                value=j+gan
+             
+              
+if __name__ == '__main__':
+    main()

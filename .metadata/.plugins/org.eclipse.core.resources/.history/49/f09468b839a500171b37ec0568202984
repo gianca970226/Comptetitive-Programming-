@@ -1,0 +1,43 @@
+res=0
+def divide(a,i,j,res):
+    if (j-i)==1:
+        if(a[i]==1 and a[j]==1):
+            return 0
+        elif((a[i]==1 and a[j]==0)or (a[i]==0 and a[j]==1)):
+            res=res+1
+            return 1 
+        else:
+            return 1
+    else:
+        q=(i+j)/2
+        x1=divide(a, i, int(q),res)
+        x2=divide(a,int(q+1),j,res)
+        if(x1==0 and x2==0):
+            return 0
+        elif((x1==1 and x2==0)or (x1==0 and x2==1)):
+            res=res+1
+            return 1    
+        else:
+            return 1
+        
+def main():
+    while(True):
+        n=int(input())
+        if not n:
+            break;
+        else:
+            for j in range(0,n):
+                x,y=input().split()
+                v=int(x)
+                b=int(y)
+                a=input().split(" ")
+                aux=[0]*pow(2,int(v))
+                for i in range(0,int(b)):
+                    aux[int(a[i])-1]=1
+                    
+                divide(aux, 0, len(aux)-1)
+                print (res)
+            break   
+                    
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,38 @@
+from operator import attrgetter;
+from gi.overrides.keysyms import value
+from optparse import Values
+class ejecicio:
+    def __init__(self,name,time):
+        self.name=name
+        self.time=time
+class submit:
+    def __init__(self,time,status):
+        self.time=time
+        self.status=status
+
+def findDuration(time):
+    x,y=time.split(":")
+    return (int(x)*60)+int(y)
+def main():
+    n= int(input())
+    input()
+    for i in range(0,n):
+        results={}
+        line=input()
+        while line:
+            datos=line.split(" ")
+                        
+                
+                
+            line=input()        
+            
+        resultusFinally=results.values()
+        
+        #sorted(resultusFinally)
+        sorted(resultusFinally, key=attrgetter("time","solved"),reverse=True) 
+        for dato in resultusFinally:
+            print(dato.numTeam,dato.solved,dato.time)   
+        print()            
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,127 @@
+from operator import attrgetter;
+class Contestant:
+    def __init__(self,name,submits):
+        self.name=name
+        self.time=0
+        self.submits=submits
+        self.solved=0
+    def __repr__(self):
+        return str(self.name)
+class Submit:
+    def __init__(self,time,status):
+        self.time=time
+        self.status=status
+    def __repr__(self):
+        return str(self.time)
+def findDuration(time):
+    x,y=time.split(":")
+    return (int(x)*60)+int(y)
+def findLimit(list):
+    res=0
+    for x in list:
+        if(x.solved>=1and x.name>res):
+            res=x.name
+    return int(res)
+def key(x):
+    try:
+        return x.time-x.s
+    except Exception:
+        return x.solved
+def mergeSort(alist):
+    if len(alist)>1:
+        mid = len(alist)//2
+        lefthalf = alist[:mid]
+        righthalf = alist[mid:]
+
+        mergeSort(lefthalf)
+        mergeSort(righthalf)
+        i=0
+        j=0
+        k=0
+        while i < len(lefthalf) and j < len(righthalf):
+            if lefthalf[i] < righthalf[j]:
+                alist[k]=lefthalf[i]
+                i=i+1
+            else:
+                alist[k]=righthalf[j]
+                j=j+1
+            k=k+1
+
+        while i < len(lefthalf):
+            alist[k]=lefthalf[i]
+            i=i+1
+            k=k+1
+
+        while j < len(righthalf):
+            alist[k]=righthalf[j]
+            j=j+1
+            k=k+1
+    print("Merging ",alist)
+
+alist = [54,26,93,17,77,31,44,55,20]
+mergeSort(alist)
+print(alist)
+def main():
+    n= int(input())
+    input()
+    for i in range(0,n):
+        results=[]
+        for h in range(0,25):
+            submits={}
+            submits["A"]=[]
+            submits["B"]=[]
+            submits["C"]=[]
+            submits["D"]=[]
+            submits["E"]=[]
+            submits["F"]=[]
+            submits["G"]=[]
+            results.append(Contestant(h+1, submits))
+        line=input()
+        while line:
+            datos=line.split(" ")
+            timeSubmit=findDuration(datos[2])
+            numberContestant=int(datos[0])-1
+            status=datos[3]
+            exercise=datos[1]
+            submit= Submit(timeSubmit,status)
+            listSubmit=results[numberContestant].submits[str(exercise)]   
+            listSubmit.append(submit)
+            line=input()        
+        for conte in results:
+            for excer in conte.submits:
+                conte.submits[excer]=sorted(conte.submits[excer],key=attrgetter("time","status")) 
+                contador=0
+                ban=False
+                for sub in conte.submits[excer]:
+                    if str(sub.status)=="Y" and ban==False :
+                        #print(sub.time)
+                        conte.time=conte.time+(sub.time+(contador*20))
+                        conte.solved=conte.solved+1
+                        ban=True
+                    contador=contador+1    
+        res=sorted(results,key=key,reverse=True) 
+        print("RANK TEAM PRO/SOLVED TIME")
+        limit=findLimit(res)
+        contador=0
+        solverAux=-1
+        timeAux=-1
+        for j in range(0,limit):
+            if(solverAux!=res[j].solved or timeAux!=res[j].time):
+                contador=contador+1
+            if(res[j].solved!=0):    
+                print ('{:>4}{:>5}{:>5}{:>11}'.format(contador,res[j].name,res[j].solved,res[j].time))
+            else:
+                print ('{:>4}{:>5}'.format(contador,res[j].name))
+                
+            solverAux=res[j].solved
+            timeAux=res[j].time
+        print()    
+         
+        #resutusFinally=results.values()
+        #sorted(resultusFinally)
+        #for dato in resultusFinally:
+        #    print(dato.numTeam,dato.solved,dato.time)   
+        #print()            
+
+if __name__ == '__main__':
+    main()

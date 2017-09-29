@@ -1,0 +1,32 @@
+class date:
+    def __init__(self,numTeam,solved,time):
+        self.numTeam=numTeam
+        self.solved=solved
+        self.time=time
+def containsDate(numTeam,resultados):
+    for i in resultados:
+        if i.numTeam==numTeam:
+            return True
+    return False    
+    
+def findDuration(time):
+    x,y=time.split(":")
+    return (int(x))*60+int(y)
+def main():
+    n= int(input())
+    input()
+    for i in range(0,n):
+        resutaldo=[]
+        line=input()
+        while line!="": 
+            datos=input.split("")
+            status=datos[3]
+            if status=="Y":
+                time=findDuration(datos[2])
+                resutaldo.append(new date(datos[0],, time))
+            line=input()
+            
+                
+    
+if __name__ == '__main__':
+    main()

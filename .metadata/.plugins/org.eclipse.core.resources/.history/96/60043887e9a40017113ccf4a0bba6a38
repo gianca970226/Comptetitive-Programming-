@@ -1,0 +1,17 @@
+def main():
+    while(True):
+        n=int(input())
+        if not n:
+            break;
+        else:
+            for j in range(0,n):
+                res=0;
+                x,y=input().split()
+                a=input.split()
+                aux=[0]*x
+                for i in range(0,y):
+                    aux[a[i]]=1
+                     
+              
+if __name__ == '__main__':
+    main()

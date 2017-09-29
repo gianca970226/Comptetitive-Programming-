@@ -1,0 +1,11 @@
+def findDuration(String time):
+    x,y=time.split(":")
+    return (int(x))*60+int(y)
+def main():
+    n= int(input())
+    input()
+        for i in range(0,n):
+            
+    
+if __name__ == '__main__':
+    main()

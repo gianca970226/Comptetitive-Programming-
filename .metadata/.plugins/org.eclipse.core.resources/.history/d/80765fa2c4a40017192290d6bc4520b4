@@ -1,0 +1,44 @@
+from operator import attrgetter;
+from gi.overrides.keysyms import value
+from optparse import Values
+class contestant:
+    def __init__(self,name):
+        self.name=name
+        self.time=0
+        self.submits
+class submit:
+    def __init__(self,time,status):
+        self.time=time
+        self.status=status
+
+def findDuration(time):
+    x,y=time.split(":")
+    return (int(x)*60)+int(y)
+def main():
+    
+    n= int(input())
+    input()
+    for i in range(0,n):
+        
+        results=[]
+        for i in range(0,25):
+            results.append(contestant(i+1))
+        line=input()
+        while line:
+            datos=line.split(" ")
+            timeSubmit=findDuration(datos[2])
+                        
+                
+                
+            line=input()        
+            
+        
+        resultusFinally=results.values()
+        #sorted(resultusFinally)
+        sorted(resultusFinally, key=attrgetter("time","solved"),reverse=True) 
+        for dato in resultusFinally:
+            print(dato.numTeam,dato.solved,dato.time)   
+        print()            
+
+if __name__ == '__main__':
+    main()
