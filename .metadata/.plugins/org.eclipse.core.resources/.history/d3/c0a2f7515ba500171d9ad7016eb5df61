@@ -1,0 +1,22 @@
+def main():
+    queve=[]
+    while True:
+        try:
+            s,n= input().split()
+            queve=[]
+        except:
+            break
+        for x in range(0,int(s)):
+            queve.append(x+1)
+        for i in range(0,int(n)):
+            line=input()
+            if(line=="N"):
+                aux=queve.pop(0)
+                queve.append(aux)
+                print(aux)
+            else:
+                print("A")
+                a,x=line.split()
+   
+if __name__ == '__main__':
+    main()

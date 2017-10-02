@@ -1,0 +1,12 @@
+def main():
+    while True:
+        s,n= input().split()
+        for i in range(0,n):
+            line=input()
+            if(line=="N"):
+                
+            else:
+                a,x=line.split()
+   
+if __name__ == '__main__':
+    main()

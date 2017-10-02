@@ -1,0 +1,37 @@
+def recursivo(grups,table,res):  
+    for i in table:
+        for j in res:             
+            if j in grups[i]:
+                if i in table:
+                    table.remove(i)
+                aux=grups[i]-res
+                
+                res=res|recursivo(grups, table,aux)
+    return res
+def main():
+    while True:
+        n,m=map(int,input().split())
+        if m ==0 and n==0:
+            break
+        grups={}
+        if m ==0:
+            print("1")
+        else:
+            table=[]
+            for i in range(0,m):
+                date=list(map(int,input().split()))
+                k=int(date[0])
+                table.append(i)
+                lista=set()
+                for j in range(1,k+1):
+                    lista.add(date[j])
+                grups[i]=lista
+            res=set()
+            res.add(0)
+
+            res=recursivo(grups, table,res)
+            print(len(res))
+           
+            
+if __name__=="__main__":
+    main()

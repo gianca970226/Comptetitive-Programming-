@@ -1,0 +1,8 @@
+def main():
+    while True:
+        s,n= input().split()
+        for i in range(0,n):
+            
+   
+if __name__ == '__main__':
+    main()

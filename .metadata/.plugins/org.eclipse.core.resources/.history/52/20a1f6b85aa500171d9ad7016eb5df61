@@ -1,0 +1,16 @@
+def main():
+    while True:
+        try:
+            s,n= input().split()
+        except:
+            break
+        for i in range(0,int(n)):
+            line=input()
+            if(line=="N"):
+                print("N")
+            else:
+                print("A")
+                a,x=line.split()
+   
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,12 @@
+def main():
+    while True:
+        s,n= input().split()
+        for i in range(0,n):
+            date=input()
+            if(date=="N"):
+                
+            else:
+                     
+   
+if __name__ == '__main__':
+    main()

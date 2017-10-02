@@ -55,9 +55,6 @@ def mergeSort(alist):
                     elif lefthalf[i].name > righthalf[j].name:
                             alist[k]=righthalf[j]
                             j=j+1
-                    
-                
-                
             k=k+1
 
         while i < len(lefthalf):
@@ -69,8 +66,6 @@ def mergeSort(alist):
             alist[k]=righthalf[j]
             j=j+1
             k=k+1
-
-
 def main():
     n= int(input())
     input()
@@ -119,7 +114,6 @@ def main():
         print("RANK TEAM PRO/SOLVED TIME")
         limit=findLimit(results)
         contador=1
-    
         solverAux=-1
         timeAux=-1
         ban=False

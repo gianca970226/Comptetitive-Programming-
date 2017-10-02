@@ -1,0 +1,17 @@
+-- VERSION_4
+-- START DISKCACHE_2
+/home/gian/Comptetitive-Programming-/.metadata/.plugins/org.eclipse.core.resources/.projects/11860-DocumentAnalyzer/com.python.pydev.analysis/v2_indexcache
+main|1506978063000000000|/home/gian/Comptetitive-Programming-/11860-DocumentAnalyzer/main.py
+-- END DISKCACHE
+-- START DICTIONARY
+1
+1=main
+-- END DICTIONARY
+-- START TREE 1
+2
+mai|1|main!10@
+rep|1|replace_punctuation!10@
+-- END TREE
+-- START TREE 2
+0
+-- END TREE

@@ -1,0 +1,38 @@
+def main():
+    queve=[]
+    cont=0
+    while True:
+        
+        s,n= input().split()
+        queve=[]
+        if(s=="0" and n=="0"):
+            break
+        cont=cont+1
+        print("Case "+str(cont)+":")
+        if(int(s)>1000):
+            s=1000
+        for x in range(0,int(s)):
+            queve.append(x+1)
+        if s==1:
+            for i in range(0,int(n)):
+                line=input()
+                print(s)
+        else:   
+            for i in range(0,int(n)):
+                line=input()
+                if(line=="N"):
+                    aux=queve.pop(0)
+                    print(aux)
+                    queve.append(aux)
+                else:
+                    aux1=queve.pop(0)
+                    a,m=line.split()
+                    queve.remove(int(m))
+                    if aux1!=m:
+                        queve.insert(0, int(aux1))
+                        queve.insert(0, int(m))
+                    else:
+                        queve.insert(0,int(m))
+   
+if __name__ == '__main__':
+    main()

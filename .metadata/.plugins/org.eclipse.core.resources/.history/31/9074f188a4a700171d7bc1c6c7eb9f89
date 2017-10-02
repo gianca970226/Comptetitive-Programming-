@@ -1,0 +1,47 @@
+class dato():
+    def __init__(self,table,res):
+        self.table=table
+        self.res=res
+    def __repr__(self):
+        return self.table
+    
+def recursivo(grups,d,m,cont):
+    for j in d.res:   
+        for i in d.table:         
+            if j in grups[i]:
+                d.res=d.res|grups[i]
+                if i in d.table:
+                    d.table.remove(i)
+                recursivo(grups, d, m,cont)
+              
+
+   
+    
+def main():
+    while True:
+        n,m=map(int,input().split())
+        if m ==0 and n==0:
+            break
+        grups={}
+        if m ==0:
+            print("1")
+        else:
+            table=[]
+            for i in range(0,m):
+                date=list(map(int,input().split()))
+                k=int(date[0])
+                table.append(i)
+                lista=set()
+                for j in range(1,k+1):
+                    lista.add(date[j])
+                grups[i]=lista
+            res=set()
+            res.add(0)
+            cont=0
+            d=dato(table,res)
+            recursivo(grups, d,m,cont)
+            print(len(d.res))
+           
+            
+if __name__=="__main__":
+    main()

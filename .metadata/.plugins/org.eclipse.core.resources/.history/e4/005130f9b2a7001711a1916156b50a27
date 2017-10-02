@@ -1,0 +1,10 @@
+
+import re, string
+
+def replace_punctuation ( text, replace ):
+  return re.sub('[%s]' % re.escape(string.punctuation), replace, text)
+  
+def main():
+    
+if __name__="__main__":
+    main()
