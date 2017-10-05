@@ -1,0 +1,10 @@
+import java.awt.Point;
+import java.util.LinkedList;
+
+public class Bola {
+	Point bola;
+	public Bola(int x,int y ) {
+		this.bola= new Point(x, y);
+	}
+	
+}

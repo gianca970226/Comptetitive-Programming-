@@ -1,0 +1,13 @@
+import java.util.LinkedList;
+
+public class node {
+	int numTokens;
+	int probability;
+	LinkedList<node> hijos;
+	public node(int numTokens) {
+		this.numTokens=numTokens;
+		this.hijos= new LinkedList<>();
+	}
+	
+
+}

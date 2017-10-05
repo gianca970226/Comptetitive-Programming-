@@ -1,0 +1,62 @@
+
+public class treeMinMax {
+	node root;
+
+	public treeMinMax() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public void createTree(int n, node node) {
+		if (root == null) {
+			root = node;
+			createTree(n, node);
+		} else {
+			for (int i = 1; i <= 2 && (n - i > 0); i++) {
+				node.hijos.add(new node(n - i));
+				createTree(n - i, node.hijos.getLast());
+			}
+		}
+	}
+
+	public int decicionMaquina(int nivel, node nodo) {
+		if (nodo.hijos.isEmpty()) {
+			return nodo.heuristica;
+		} else {
+
+			if (nivel % 2 != 0) {
+				int minino = Integer.MAX_VALUE;
+				for (int i = 0; i < nodo.hijos.size(); i++) {
+					minino = Math.min(minino, decicionMaquina(nivel + 1, nodo.hijos.get(i)));
+				}
+				nodo.heuristica=minino;
+				return minino;
+			} else {
+				int maximo = Integer.MAX_VALUE;
+				for (int i = 0; i < nodo.hijos.size(); i++) {
+					maximo = Math.max(maximo, decicionMaquina(nivel + 1, nodo.hijos.get(i)));
+				}
+				nodo.heuristica=maximo;
+				return maximo;
+			}
+		}
+	}
+
+	public void createHeuristicas(node node, int nivel) {
+		//System.out.print(node.numTokens + " ");
+		if (node.hijos.isEmpty()) {
+			if (nivel % 2 == 0) {
+				node.heuristica = 100 * nivel;
+			} else {
+				node.heuristica = -1;
+			}
+			//System.out.println("HOja tiene->" + node.heuristica);
+		} else {
+			for (int i = 0; i < node.hijos.size(); i++) {
+				createHeuristicas(node.hijos.get(i), nivel + 1);
+			}
+		}
+
+		// System.out.println(node.numTokens);
+
+	}
+}

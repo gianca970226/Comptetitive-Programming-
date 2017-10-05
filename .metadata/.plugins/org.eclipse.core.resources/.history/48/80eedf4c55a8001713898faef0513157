@@ -1,0 +1,14 @@
+import java.awt.Color;
+import java.awt.Dimension;
+
+import javax.swing.JPanel;
+
+public class panel extends JPanel {
+	
+	public panel() {
+		this.setBackground(new Color(255, 0, 0));
+		this.setSize(new Dimension(40, 50));
+		
+	}
+
+}

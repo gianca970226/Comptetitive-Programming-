@@ -1,0 +1,8 @@
+import javax.swing.JPanel;
+
+public class panel extends JPanel {
+	public panel() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

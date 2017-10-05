@@ -1,0 +1,47 @@
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.util.LinkedList;
+
+public class Cuadrado extends Thread {
+	Rectangle cuadrado;
+	LinkedList<Bola> bolas;
+
+	public Cuadrado() {
+		this.cuadrado = new Rectangle(0, 0, 400, 400);
+		this.bolas = new LinkedList<>();
+		this.bolas.add(new Bola(0, 0, 1));
+		this.start();
+	}
+
+	@Override
+	public void run() {
+		while (true) {
+			for (int i = 0; i < this.bolas.size(); i++) {
+				if (this.bolas.get(i).decicion == 1) {
+					if ((this.bolas.get(i).bola.x + 30) < this.cuadrado.getWidth()) {
+						System.out.println(this.bolas.get(i));
+						this.bolas.get(i).bola.y = this.bolas.get(i).bola.y + 1;
+						this.bolas.get(i).bola.x = this.bolas.get(i).bola.x + 1;
+					} else {
+						this.bolas.get(i).decicion = 2;
+					}
+				} else if (this.bolas.get(i).decicion == 2) {
+					if ((this.bolas.get(i).bola.x - 30) > 100) {
+						System.out.println(this.bolas.get(i));
+						this.bolas.get(i).bola.y = this.bolas.get(i).bola.y - 1;
+						this.bolas.get(i).bola.x = this.bolas.get(i).bola.x - 1;
+					} else {
+						this.bolas.get(i).decicion = 1;
+					}
+				}
+			}
+			try {
+				Thread.sleep(10);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+	}
+}

@@ -1,0 +1,37 @@
+import java.util.LinkedList;
+
+public class node {
+	int numTokens;
+	int heuristica;
+	LinkedList<node> hijos;
+	public node(int numTokens) {
+		this.numTokens=numTokens;
+		this.hijos= new LinkedList<>();
+	}
+	public int decicionMaquina(int nivel, node nodo) {
+		if (nodo.hijos.isEmpty()) {
+			return nodo.heuristica;
+		} else {
+
+			if (nivel % 2 != 0) {
+				int minino = Integer.MAX_VALUE;
+				for (int i = 0; i < nodo.hijos.size(); i++) {
+					System.out.println(nodo.hijos.get(i).heuristica);
+					minino = Math.min(minino, decicionMaquina(nivel + 1, nodo.hijos.get(i)));
+				}
+				nodo.heuristica=minino;
+				return minino;
+			} else {
+				int maximo = Integer.MIN_VALUE;
+				for (int i = 0; i < nodo.hijos.size(); i++) {
+					System.out.println(nodo.hijos.get(i).heuristica);
+					maximo = Math.max(maximo, decicionMaquina(nivel + 1, nodo.hijos.get(i)));
+				}
+				nodo.heuristica=maximo;
+				return maximo;
+			}
+		}
+	}
+	
+
+}

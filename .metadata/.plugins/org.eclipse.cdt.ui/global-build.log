@@ -1,34 +1,25 @@
-02:01:31 **** Build of configuration Debug for project Holab ****
+21:51:19 **** Build of configuration Debug for project Prueba ****
 make all 
-Building file: ../ho.cpp
+Building file: ../011860.cpp
 Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"ho.d" -MT"ho.o" -o "ho.o" "../ho.cpp"
-Finished building: ../ho.cpp
- 
-Building file: ../hol.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"hol.d" -MT"hol.o" -o "hol.o" "../hol.cpp"
-Finished building: ../hol.cpp
- 
-Building target: Holab
-Invoking: GCC C++ Linker
-g++  -o "Holab"  ./ho.o ./hol.o   
-Finished building target: Holab
- 
-12:12:03 **** Incremental Build of configuration Debug for project Holab ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-make: *** wait: No hay ningún proceso hijo.  Alto.
-make: *** Se espera a que terminen otras tareas....
-make: *** wait: No hay ningún proceso hijo.  Alto.
-Command canceled
-13:24:07 **** Build of configuration Debug for project Holab ****
-make all 
-Building file: ../main.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.cpp"
-subdir.mk:18: fallo en las instrucciones para el objetivo 'main.o'
-make: *** [main.o] Terminado
-Command canceled
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"011860.d" -MT"011860.o" -o "011860.o" "../011860.cpp"
+In file included from /usr/include/c++/5/unordered_map:35:0,
+                 from ../011860.cpp:10:
+/usr/include/c++/5/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support \
+  ^
+../011860.cpp: In function ‘int main()’:
+../011860.cpp:60:28: warning: range-based ‘for’ loops only available with -std=c++11 or -std=gnu++11
+             for (char &c : s)
+                            ^
+../011860.cpp:75:34: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int p = 0, q = 0; p < m.size() && q < m.size(); q++) {
+                                  ^
+../011860.cpp:75:50: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int p = 0, q = 0; p < m.size() && q < m.size(); q++) {
+                                                  ^
+../011860.cpp:78:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+             while (p < m.size() && words.empty()) {
+                      ^
+subdir.mk:18: fallo en las instrucciones para el objetivo '011860.o'
+make: *** [011860.o] Error 1

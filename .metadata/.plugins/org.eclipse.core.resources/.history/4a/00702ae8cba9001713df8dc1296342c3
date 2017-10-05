@@ -1,0 +1,22 @@
+
+public class main {
+	public static void main(String args[])
+	{
+		treeMinMax tree= new treeMinMax();
+		node node= new node(5);
+		tree.createTree(5, node);
+		tree.createHeuristicas(tree.root,0);
+		//nodoActual
+		
+		int heuristica=tree.decicionMaquina(1, tree.root.hijos.get(0));
+		for (int i = 0; i <tree.root.hijos.get(0).hijos.size(); i++) {
+			if(tree.root.hijos.get(0).hijos.get(i).heuristica==heuristica)
+			{
+				System.out.println("Escoja "+(tree.root.hijos.get(0).numTokens-tree.root.hijos.get(0).hijos.get(i).numTokens)+"Fichas");
+				break;
+			}
+		}
+		
+		
+	}
+}

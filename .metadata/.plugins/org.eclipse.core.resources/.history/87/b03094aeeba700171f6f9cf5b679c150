@@ -1,0 +1,54 @@
+
+def complete(x,y,arr,words):
+    s=set()
+    for i in range(x,(y+1)):
+        s.add(arr[i])     
+    if words==s:
+        return True
+    else:
+        return False
+def main():
+    n=int(input())
+    
+    for v in range(0,n):
+        line=input()
+        line2=""
+        words=set()
+        while line!="END":
+            lineN=""
+            line=line+"."
+           
+            palabra=""
+            for i in range(0,len(line)):
+                if not line[i].isalpha():
+                    if not palabra=="":
+                        words.add(palabra)
+                    lineN=lineN+" "
+                    palabra=""
+                else:
+                    palabra=palabra+line[i]
+                    lineN=lineN+line[i]    
+            
+            line2=line2+" "+lineN
+            line=input()
+        arr=line2.split()
+        print(words)
+        t=len(words)
+        y=len(arr)-1
+        x=0
+        if t==1:
+            print("Document "+str(v+1)+": 1 1")
+        else: 
+            for i in range (0,len(arr)-(t-1)):
+                j=i+(t-1)
+                while (j-i)<(y-x) and j<len(arr):
+                    if complete(i, j, arr, words):     
+                        x=i
+                        y=j
+                        break
+                    j=j+1
+               
+                        
+            print("Document "+str(v+1)+": "+str(x+1)+" "+str(y+1))   
+if __name__=="__main__":
+    main()

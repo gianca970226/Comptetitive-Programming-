@@ -1,0 +1,9 @@
+
+public class node {
+	int numFicha;
+	int over;
+	int win;
+	int probability;
+	
+
+}

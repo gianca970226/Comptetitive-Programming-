@@ -1,0 +1,9 @@
+import java.awt.Frame;
+
+public class VentanaMain extends Frame
+{
+	public static void main (String args[])
+	{
+		VentanaMain v= new VentanaMain()
+	}
+}

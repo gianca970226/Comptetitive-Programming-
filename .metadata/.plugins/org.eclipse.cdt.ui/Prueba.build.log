@@ -1,0 +1,28 @@
+21:51:19 **** Build of configuration Debug for project Prueba ****
+make all 
+Building file: ../011860.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"011860.d" -MT"011860.o" -o "011860.o" "../011860.cpp"
+In file included from /usr/include/c++/5/unordered_map:35:0,
+                 from ../011860.cpp:10:
+/usr/include/c++/5/bits/c++0x_warning.h:32:2: error: #error This file requires compiler and library support for the ISO C++ 2011 standard. This support must be enabled with the -std=c++11 or -std=gnu++11 compiler options.
+ #error This file requires compiler and library support \
+  ^
+../011860.cpp: In function ‘int main()’:
+../011860.cpp:60:28: warning: range-based ‘for’ loops only available with -std=c++11 or -std=gnu++11
+             for (char &c : s)
+                            ^
+../011860.cpp:75:34: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int p = 0, q = 0; p < m.size() && q < m.size(); q++) {
+                                  ^
+../011860.cpp:75:50: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         for (int p = 0, q = 0; p < m.size() && q < m.size(); q++) {
+                                                  ^
+../011860.cpp:78:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+             while (p < m.size() && words.empty()) {
+                      ^
+subdir.mk:18: fallo en las instrucciones para el objetivo '011860.o'
+make: *** [011860.o] Error 1
+
+21:51:19 Build Finished (took 448ms)
+

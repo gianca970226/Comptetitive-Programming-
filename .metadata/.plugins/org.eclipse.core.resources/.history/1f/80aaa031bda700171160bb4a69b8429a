@@ -1,0 +1,29 @@
+
+import re, string
+from array import array
+
+def replace_digitos ( text, replace ):
+    return re.sub('[%s]' % re.escape(string.digits), replace, text)
+def replace_punctuation ( text, replace ):
+    return re.sub('[%s]' % re.escape(string.punctuation), replace, text)
+  
+def main():
+    n=int(input())
+    for j in range(0,n):
+        line=input()
+        line2=""
+        while line!="END":
+            line=replace_punctuation(line, " ")
+            line=replace_digitos(line, "")
+            line = " ".join( line.split())
+            line2=line2+" "+line
+            line=input()
+        arr=input().split()
+        palabra=set()
+        for pa in array:
+            palabra.add(pa)
+            
+            
+    
+if __name__=="__main__":
+    main()

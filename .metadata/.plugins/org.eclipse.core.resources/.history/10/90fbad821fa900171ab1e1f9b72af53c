@@ -1,0 +1,13 @@
+import java.util.LinkedList;
+
+public class node {
+	int numTokens;
+	int over;
+	int win;
+	int probability;
+	LinkedList<node> hijos;
+	public node() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

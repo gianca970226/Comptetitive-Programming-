@@ -1,0 +1,13 @@
+
+public class main {
+	public static void main(String args[])
+	{
+		treeMinMax tree= new treeMinMax();
+		node node= new node(5);
+		tree.createTree(5, node);
+		tree.createHeuristicas(tree.root,0);
+		node nodeAux=tree.decicionMaquina(1, tree.root.hijos.get(1));
+		System.out.println("Escoja "+(tree.root.hijos.get(1).numTokens-nodeAux.numTokens)+"Fichas");
+		
+	}
+}

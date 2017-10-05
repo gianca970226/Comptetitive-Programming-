@@ -1,0 +1,37 @@
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.util.Scanner;
+
+public class main {
+	public static void main(String args[]) {
+		treeMinMax tree = new treeMinMax();
+		Scanner sc = new Scanner(new InputStreamReader(System.in));
+		int n = 5;
+		node node = new node(n);
+		tree.createTree(n, node);
+		tree.createHeuristicas(tree.root, 0);
+		// nodoActual
+		int nivel=1;
+		while (true) {
+			if (n != 1) {
+				System.out.println(n + "Fichas");
+				int cantidad=sc.nextInt();
+				int heuristica = tree.decicionMaquina(1, tree.root.hijos.get(cantidad-1));
+				for (int i = 0; i < tree.root.hijos.get(cantidad-1).hijos.size(); i++) {
+					if (tree.root.hijos.get(cantidad-1).hijos.get(i).heuristica == heuristica) {
+						n =tree.root.hijos.get(cantidad-1).hijos.get(i).numTokens;
+						System.out.println("Escoja "
+								+ (tree.root.hijos.get(cantidad-1).numTokens - tree.root.hijos.get(cantidad-1).hijos.get(i).numTokens)
+								+ "Fichas");
+						break;
+					}
+				}
+			} else {
+				System.out.println("FInal");
+				break;
+			}
+		}
+
+	}
+}

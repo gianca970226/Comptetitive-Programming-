@@ -1,0 +1,54 @@
+
+import re, string
+
+
+def replace_digitos ( text, replace ):
+    return re.sub('[%s]' % re.escape(string.digits), replace, text)
+def replace_punctuation ( text, replace ):
+    return re.sub('[%s]' % re.escape(string.punctuation), replace, text)
+def complete(x,y,arr,words):
+    s=set()
+    for i in range(x,(y+1)):
+        s.add(arr[i])     
+    if words==s:
+        return True
+    else:
+        return False
+def main():
+    n=int(input())
+    for v in range(0,n):
+        line=input()
+        line2=""
+        while line!="END":
+            line=replace_punctuation(line, " ")
+            line=replace_digitos(line, "")
+            line = " ".join( line.split())
+            line2=line2+" "+line
+            line=input()
+        arr=line2.split()
+        words=set()
+        for word in arr:
+            words.add(word)
+        print(words)
+        t=len(words)
+        x=0
+        y=0
+        if t==1:
+            print("Document "+str(v+2)+": 1 1")
+        else: 
+            for i in range (0,len(arr)-(t-1)):
+                for j in range (i+(t-1),t):
+                    if complete(i, j, arr, words):     
+                        if (y-x)<(j-i):
+                            x=i
+                            y=j
+                        break
+            print(x,y)
+            
+        
+        
+            
+            
+    
+if __name__=="__main__":
+    main()

@@ -1,0 +1,11 @@
+
+public class main {
+	public static void main(String args[])
+	{
+		treeMinMax tree= new treeMinMax();
+		node node= new node(5);
+		tree.createTree(5, node);
+		tree.recorrido(tree.root);
+		
+	}
+}

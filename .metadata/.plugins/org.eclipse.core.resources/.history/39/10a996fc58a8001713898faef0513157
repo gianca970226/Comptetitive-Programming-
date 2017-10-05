@@ -1,0 +1,26 @@
+import java.awt.Color;
+import java.awt.Graphics;
+
+import javax.swing.JPanel;
+
+public class panel extends JPanel {
+	Cuadrado cuadrado;
+	public panel() {
+		this.setBackground(new Color(0, 0, 0));
+		this.cuadrado= new Cuadrado();
+		
+	}
+	@Override
+	protected void paintComponent(Graphics g) {
+		// TODO Auto-generated method stub
+		super.paintComponent(g);
+		
+		g.drawRect(200, 100,this.cuadrado.cuadrado.width, this.cuadrado.cuadrado.height);
+		for (int i = 0; i < this.cuadrado.bolas.size(); i++) {
+			g.drawOval(200+this.cuadrado.bolas.get(i).x,100+ this.cuadrado.bolas.get(i)..x, 30, 30);
+		}
+		repaint();
+
+	}
+
+}
